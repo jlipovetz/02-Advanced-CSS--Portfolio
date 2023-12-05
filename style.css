@@ -1,0 +1,157 @@
+/* Create CSS variables at the root of the document to be used throughout the style sheet */
+* {
+  margin:0;
+  padding:0;  
+}
+
+
+:root {
+  --white: #fff;
+  --dark-blue: #13293d;
+  /* You can use it with any value that is repeated throughout the sheet */
+  --border-radius: 50px;
+}
+
+body {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 40px;
+}
+
+header {
+  padding: 40px;
+  text-align: center;
+  /* Refer to CSS values by the name of the custom property we assigned it */
+  background: var(--dark-blue);
+  color: var(--white);
+}
+
+nav {
+  display: flex;
+  background-color: #d8a47f;
+}
+
+nav a {
+  color: var(--dark-blue);
+  padding: 14px 11%;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+}
+
+nav a:hover {
+  background-color: var(--white);
+  color: var(--dark-blue);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.aboutme {
+  text-align: center;
+  font-size: 20px;
+  margin: 10px;
+  margin-bottom: 40px;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  bottom: 0;
+  padding: 20px;
+  text-align: center;
+  background: var(--dark-blue);
+  color: var(--white);
+  margin-top: auto;
+  font-size: 16px;
+}
+
+footer p {
+  margin-left: 11%;
+  margin-right: 11%;
+}
+
+footer p a {
+  text-decoration: none;
+  color: #a25757;
+}
+
+.projects {
+  flex: 1;
+  background-color: var(--white);
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.card-main {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--border-radius);
+  padding: 10px;
+  flex: 0 0 600px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  margin: 10px;
+}
+
+.card-main > header {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  padding: 20px;
+  font-size: 24px;
+}
+
+.card-main > img {
+  width: 100%;
+}
+
+.card {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--border-radius);
+  padding: 10px;
+  flex: 0 0 300px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  margin: 20px;
+  font-size: 24px;
+}
+
+.card > header {
+  /* This is the same as `border-radius: 50px 50px 0 0 */
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  padding: 20px;
+}
+
+.card > img {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  main,
+  nav {
+    flex-direction: column;
+  }
+}
+
+
